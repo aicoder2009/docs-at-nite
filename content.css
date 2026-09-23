@@ -1,0 +1,14 @@
+/* Docs draws the document into <canvas>, so inverting the page is the only
+   way to darken it — this also darkens all menus, dialogs, and sidebars. */
+html.docs-nite {
+  /* The root element's background paints outside its own filter,
+     so it must be a dark color directly */
+  background-color: #121212 !important;
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Flip photos/avatars/video back to their real colors */
+html.docs-nite img,
+html.docs-nite video {
+  filter: invert(1) hue-rotate(180deg);
+}

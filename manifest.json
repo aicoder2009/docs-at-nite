@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Docs@Nite",
+  "version": "1.1.0",
+  "description": "Dark mode for Google Docs. Click the icon to toggle.",
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://docs.google.com/document/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_title": "Docs@Nite — toggle dark mode"
+  }
+}
